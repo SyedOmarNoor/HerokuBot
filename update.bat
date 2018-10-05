@@ -1,5 +1,5 @@
 git add .
-set FILENAME=%%t%%u%%v%%w
+set FILENAME=%RANDOM%
 git commit -am "IDK %FILENAME%"
 git push -u origin master
 end
