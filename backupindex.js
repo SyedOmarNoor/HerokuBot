@@ -1,5 +1,5 @@
 const botconfig = require("./botconfig.json");
-const token = process.env.token;
+const tokenfile = require("./token.json");
 const Discord = require("discord.js");
 const fs = require("fs")
 const bot = new Discord.Client({disableEveryone: true});
@@ -111,4 +111,4 @@ if(commandfile) commandfile.run(bot, message, args);
 
 });
 
-bot.login(token);
+bot.login(tokenfile.token);
