@@ -1,5 +1,5 @@
 git add .
-set /a result=(%random% %% %var%)+1
-git commit -am "IDK %result%"
+set FILENAME=basename-%%t%%u%%v%%w
+git commit -am "IDK %FILENAME%"
 git push -u origin master
 pause
