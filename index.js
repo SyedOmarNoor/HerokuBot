@@ -109,6 +109,6 @@ if(commandfile) commandfile.run(bot, message, args);
 //     return message.channel.send("Help coming soon!");
 // }
 
-}).listen(process.env.PORT);
+});
 
 bot.login(tokenfile.token);
