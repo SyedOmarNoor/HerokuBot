@@ -6,5 +6,5 @@ module.exports.run = async (bots, message, args) => {
 }
 
 module.exports.help = {
-    name: "sp(lat)oon"
+    name: "spoon"
 }
