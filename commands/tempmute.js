@@ -8,29 +8,29 @@ module.exports.run = async (bots, message, args) => {
     let tomute = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!tomute) return message.reply("Couldn't find that user.");
     if(!tomute.hasPermission("ADMINISTRATOR")) return message.reply("You can't mute them.");
-    let muterole = message.guild.roles.find(`name`, "muted");
+    let muterole = message.guild.roles.find(`name`, "Muted");
     //start of create role
     if(tomute.hasPermission("ADMINISTRATOR")){
         
-        if(!muterole){
-            try{
-                muterole = await message.guild.createRole({
-                    name: "muted",
-                    color:"#000000",
-                    permissions: []
-                })
-                message.guild.channels.forEach(async (channel, id) => {
-                    await channel.overwritePermissions(muterole, {
-                        SEND_MESSAGES: false,
-                        ADD_REACTIONS: false
+        // if(!muterole){
+        //     try{
+        //         muterole = await message.guild.createRole({
+        //             name: "muted",
+        //             color:"#000000",
+        //             permissions: []
+        //         })
+        //         message.guild.channels.forEach(async (channel, id) => {
+        //             await channel.overwritePermissions(muterole, {
+        //                 SEND_MESSAGES: false,
+        //                 ADD_REACTIONS: false
                     
-                    });
-                });
-            }catch(e){
-                console.log(e.stack)
-            }
-        }
-        //end of create role
+        //             });
+        //         });
+        //     }catch(e){
+        //         console.log(e.stack)
+        //     }
+        // }
+        // //end of create role
         let mutetime = args[1];
         if(!mutetime) return message.reply("You didn't specify a time.");
 
@@ -46,7 +46,7 @@ module.exports.run = async (bots, message, args) => {
         }, ms(mutetime));
 
 
-    };
+    }
 //end of module
 }
 
