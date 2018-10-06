@@ -33,8 +33,10 @@ module.exports.run = async (bots, message, args) => {
     if(!mutetime) return message.reply("You didn't specify a time.");
 
     await(tomute.addRole(muterole.id));
+    let tempmutechannel = message.guild.channels.find(`name`, "incidents");
+    if(!tempmutechannel) return message.channel.send("Couldn't find any 'incidents' channel.")
     message.delete().catch(O_o=>{});
-    message.reply(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}.`);
+    tempmutechannel.send(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}.`);
 
     setTimeout(function(){
         tomute.removeRole(muterole.id);
