@@ -3,7 +3,7 @@ const ms = require("ms");
 
 module.exports.run = async (bots, message, args) => {
 
-    //!!tempmute @user 1s/m/h/d
+    //!!tempmute @user 1s/m/h/d/w/y
 
     let tomute = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!tomute) return message.reply("Couldn't find that user.");
