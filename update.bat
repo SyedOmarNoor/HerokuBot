@@ -3,4 +3,3 @@ git add .
 git status
 git commit -am "%FILENAME%"
 git push -u origin master
-end
