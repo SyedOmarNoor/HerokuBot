@@ -5,4 +5,4 @@ if errorlevel = 0 (
     git commit -am "%FILENAME%"
     git push -u origin master
 )
-end
+pause
