@@ -6,7 +6,7 @@ module.exports.run = async (bots, message, args) => {
     
     .setDescription("Rules")
     .setColor("#000000")
-    .addField("#1","Be a good person, like (what) Omar (should be)." )
+    .addField("#1","Be a good person, like (what) Omar (should be)." );
 
     return message.channel.send(rulesEmbed);
 }
