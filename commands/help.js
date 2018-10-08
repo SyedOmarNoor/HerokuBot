@@ -15,7 +15,8 @@ module.exports.run = async (bots, message, args) => {
     .addField("!!tempmute", "Makes me mute a user temporarily (not coded yet, I don't know what it actually does)")
     .addField("!!beemovie", "Makes me recite the first three sentences of the Bee Movie")
     .addField("!!spoon", "Makes me show an edited picture of the Splatoon logo but without the 'lat' in it, alongside with an edited version of the '2' squid made to look like a spoon.")
-    .addField("!!rules", "Make me give a list of rules.");
+    .addField("!!rules", "Make me give a list of rules.")
+    .addField("!!music", "Oi how did you know that existed? It's not finished, let alone started.");
 
     return message.channel.send(helpEmbed);
 }
