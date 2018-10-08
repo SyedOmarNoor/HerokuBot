@@ -3,7 +3,6 @@ const Discord = require("discord.js");
 module.exports.run = async (bots, message, args) => {
 
     let rulesEmbed = new Discord.RichEmbed()
-    let coreUser = "Pandemic#9988"
     
     .setDescription("Rules")
     .setColor("#000000")
