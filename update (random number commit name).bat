@@ -1,3 +1,4 @@
+@echo off
 set /a FILENAME=%RANDOM% * 10000 / 32768 + 1
 git add .
 git status
