@@ -12,7 +12,7 @@ module.exports.run = async (bots, message, args) => {
     .addField("!!botinfo", "Makes me show information about myself")
     .addField("!!serverinfo", "Makes me show information about the server")
     .addField("!!report", "Makes me make a report to the 'reports' channel. Usage: !!report @user reason")
-    .addField("!!tempmute", "Makes me mute a user temporarily (not coded yet, I don't know what it actually does)")
+    .addField("!!tempmute", "Makes me mute a user temporarily. Usage: !!tempmute @user 1s/m/h/d")
     .addField("!!beemovie", "Makes me recite the first three sentences of the Bee Movie")
     .addField("!!spoon", "Makes me show an edited picture of the Splatoon logo but without the 'lat' in it, alongside with an edited version of the '2' squid made to look like a spoon.")
     .addField("!!rules", "Make me give a list of rules.")
