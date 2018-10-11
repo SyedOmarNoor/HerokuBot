@@ -108,7 +108,7 @@ if(commandfile) commandfile.run(bot, message, args);
 // if(cmd === `${prefix}help`){
 //     return message.channel.send("Help coming soon!");
 // }
-if(cmd === 'dank memes') {
+if(cmd === "dank memes") {
     return message.channel.send("It doesn't work that way.");
 }
 
