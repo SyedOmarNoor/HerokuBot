@@ -109,7 +109,7 @@ if(commandfile) commandfile.run(bot, message, args);
 //     return message.channel.send("Help coming soon!");
 // }
 if(cmd === 'dank memes') {
-    return message.channel.send("It doesn't work that way.")
+    return message.channel.send("It doesn't work that way.");
 }
 
 });
