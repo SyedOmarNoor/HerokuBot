@@ -13,7 +13,6 @@ module.exports.run = async (bots, message, args) => {
 
     message.channel.send(dogembed);
     
-
 }
 
 module.exports.help = {
