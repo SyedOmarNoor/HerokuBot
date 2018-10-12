@@ -12,4 +12,3 @@ module.exports.noPerms = (message, perm) => {
     message.channel.send(embed).then(m => m.delete(5000));
 
 }
-
