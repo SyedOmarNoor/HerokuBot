@@ -34,7 +34,7 @@ module.exports.run = async (bots, message, args) => {
         if(args[0] == "help"){
             message.reply("Usage: !!tempmute @user (n)s/m/h/d");
             return;
-          }
+        }
         let mutetime = args[1];
         if(!mutetime) return message.reply("You didn't specify a time.");
 
