@@ -31,7 +31,7 @@ module.exports.run = async (bots, message, args) => {
         //     }
         // }
         // //end of create role
-        if(args[0] == "help"){
+        if(!args[1]){
             message.reply("Usage: !!tempmute @user (n)s/m/h/d");
             return;
         }
