@@ -49,5 +49,5 @@ module.exports.run = async (bots, message, args) => {
 }
 
 module.exports.help = {
-    name: "glitchgame"
+    name: "glitchgameV2"
 }
