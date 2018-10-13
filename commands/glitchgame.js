@@ -8,7 +8,7 @@ module.exports.run = async (bots, message, args) => {
     let glitchgameembed = new Discord.RichEmbed()
     .setColor("#ffffff")
     .setTitle("Glitch game")
-    .setImage(body);
+    .setImage(body.canvas);
 
     message.channel.send(glitchgameembed);
 }
