@@ -2,6 +2,15 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bots, message, args) => {
 
+    switch (args[1]) {
+        case "ping" :
+          message.channel.send('Pong!');
+          break;
+        case "blah" :
+          message.channel.send('Meh.');
+          break;
+      }
+
     let helpEmbed = new Discord.RichEmbed()
     
     .setDescription("Help and Command Information")
