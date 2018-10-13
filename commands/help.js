@@ -17,7 +17,7 @@ module.exports.run = async (bots, message, args) => {
     .addField("!!beemovie", "Makes me recite the first three sentences of the Bee Movie")
     .addField("!!spoon", "Makes me show an edited picture of the Splatoon(/ 2) logo but without the 'lat' in it, alongside with an edited version of the '2' squid made to look like a spoon.")
     .addField("!!rules", "Make me give a list of rules.")
-    .addField("!!music", "Makes me play music.");
+    .addField("!!music", "(WIP) Makes me play music.");
 
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let command = args.shift().toLowerCase();
@@ -35,7 +35,7 @@ module.exports.run = async (bots, message, args) => {
     if(args[0]) {
         return message.channel.send(helpEmbed);
     }
-    
+
 }
 
 module.exports.help = {
