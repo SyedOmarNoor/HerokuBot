@@ -2,15 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bots, message, args) => {
 
-    switch (args[1]) {
-        case "ping" :
-          message.channel.send('Pong!');
-          break;
-        case "blah" :
-          message.channel.send('Meh.');
-          break;
-      }
-
+    
     let helpEmbed = new Discord.RichEmbed()
     
     .setDescription("Help and Command Information")
@@ -27,7 +19,23 @@ module.exports.run = async (bots, message, args) => {
     .addField("!!rules", "Make me give a list of rules.")
     .addField("!!music", "Makes me play music.");
 
-    return message.channel.send(helpEmbed);
+    let args = message.content.slice(prefix.length).trim().split(/ +/g);
+    let command = args.shift().toLowerCase();
+
+    if(args[0]){
+        switch (args[1]) {
+            case "ping" :
+                message.channel.send('Pong!');
+                break;
+            case "blah" :
+                message.channel.send('Meh.');
+                break;
+        }
+    }
+    if(args[0]) {
+        return message.channel.send(helpEmbed);
+    }
+    
 }
 
 module.exports.help = {
