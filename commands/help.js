@@ -19,22 +19,22 @@ module.exports.run = async (bots, message, args) => {
     .addField("!!rules", "Make me give a list of rules.")
     .addField("!!music", "(WIP) Makes me play music.");
 
-    let args = message.content.slice(prefix.length).trim().split(/ +/g);
-    let command = args.shift().toLowerCase();
+    // let args = message.content.slice(prefix.length).trim().split(/ +/g);
+    // let command = args.shift().toLowerCase();
 
-    if(args[0]){
-        switch (args[1]) {
-            case "ping" :
-                message.channel.send('Pong!');
-                break;
-            case "blah" :
-                message.channel.send('Meh.');
-                break;
-        }
-    }
-    if(args[0]) {
+    // if(args[0]){
+    //     switch (args[1]) {
+    //         case "ping" :
+    //             message.channel.send('Pong!');
+    //             break;
+    //         case "blah" :
+    //             message.channel.send('Meh.');
+    //             break;
+    //     }
+    // }
+    // if(args[0]) {
         return message.channel.send(helpEmbed);
-    }
+    // }
 
 }
 
