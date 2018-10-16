@@ -7,12 +7,12 @@ module.exports.run = async (bots, message, args) => {
 
     let spoonembed = new Discord.RichEmbed()
     .setColor("#ffffff")
-    //.setTitle("Cat :cat:")
+    .setTitle("Sp(lat)oon")
     .setImage(body);
 
     message.channel.send(spoonembed);
 }
 
 module.exports.help = {
-    name: "cat"
+    name: "spoon"
 }
