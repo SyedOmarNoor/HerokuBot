@@ -26,5 +26,6 @@ module.exports.run = async (bots, message, args) => {
 }
 
 module.exports.help = {
-    name: "music"
+    name: "music",
+    aliases: ["start"]
 }
