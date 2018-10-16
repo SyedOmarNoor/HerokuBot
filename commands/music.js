@@ -2,15 +2,15 @@ const Discord = require("discord.js");
 const ytdl = require("ytdl-core");
 
 module.exports.run = async (bots, message, args) => {
-    // if(!args[0]) {
-    //     message.channel.send("Please provide a link.");
-    //     return;
-    // }
+    if(!args[0]) {
+        message.channel.send("Please provide a link.");
+        return;
+    }
 
-    // if(!message.member.voiceChannel) {
-    //     message.channel.send("Please join a voice channel.");
-    //     return;
-    // }
+    if(!message.member.voiceChannel) {
+        message.channel.send("Please join a voice channel.");
+        return;
+    }
     if (message.guild.me.voiceChannel) return message.channel.send('Sorry, the bot is already connected to the guild.');
 
     let validate = await ytdl.validateURL(args[0]);
