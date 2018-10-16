@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const ytdl = require("ytdl-core");
 
 module.exports.run = async (bots, message, args) => {
-    // if(!args[1]) {
+    // if(!args[0]) {
     //     message.channel.send("Please provide a link.");
     //     return;
     // }
@@ -11,9 +11,7 @@ module.exports.run = async (bots, message, args) => {
     //     message.channel.send("Please join a voice channel.");
     //     return;
     // }
-    if (!message.member.voiceChannel) return message.channel.send('Please connect to a voice channel.');
     if (message.guild.me.voiceChannel) return message.channel.send('Sorry, the bot is already connected to the guild.');
-    if (!args[0]) return message.channel.send('Sorry, please input a url following the command.');
 
     let validate = await ytdl.validateURL(args[0]);
     if (!validate) return message.channel.send('Sorry, please input a valid url following the command.');
@@ -24,7 +22,7 @@ module.exports.run = async (bots, message, args) => {
         filter: 'audioonly'
     }));
 
-    message.channel.send(Now playing: ${info.title});
+    message.channel.send(`Now playing: ${info.title}`);
 }
 
 module.exports.help = {
