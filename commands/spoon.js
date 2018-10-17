@@ -8,7 +8,7 @@ module.exports.run = async (bots, message, args) => {
     let spoonembed = new Discord.RichEmbed()
     .setColor("#ffffff")
     .setTitle("Sp(lat)oon")
-    .setImage(url);
+    .setImage(body);
 
     message.channel.send(spoonembed);
 }
