@@ -16,7 +16,7 @@ module.exports.run = async (bots, message, args) => {
         //if (message.guild.me.voiceChannel) return message.channel.send('Sorry, the bot is already connected to a music channel.');
 
         let validate = await ytdl.validateURL(args[0]);
-        if (!validate) return message.channel.send('Sorry, please input a valid url following the command.');
+        if (!validate) return message.channel.send("Sorry, please input a valid url following the command.");
 
         let info = await ytdl.getInfo(args[0]);
         let connection = await message.member.voiceChannel.join();
