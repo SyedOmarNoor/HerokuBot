@@ -1,14 +1,8 @@
+
 const Discord = require("discord.js");
 
 module.exports.run = async (bots, message, args) => {
-
-    let spoonembed = new Discord.RichEmbed()
-
-    .setTitle("Sp(lat)oon")
-    .setColor("#ffffff")
-    .setImage('..commands//xw9igs0hjhc11.jpg');
-
-    message.channel.send(spoonembed);
+    return message.channel.send("https://i.redd.it/xw9igs0hjhc11.jpg");
 }
 
 module.exports.help = {
