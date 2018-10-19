@@ -2,13 +2,8 @@ const Discord = require("discord.js");
 const ytdl = require("ytdl-core");
 //const process.env.FFMPEG_PATH = './node_modules/ffmpeg-binaries/bin/ffmpeg.exe'
 var ffmpegPath = './node_modules/ffmpeg-binaries/bin/ffmpeg.exe'
-const botconfig = require("./botconfig.json");
 
 module.exports.run = async (bots, message, args) => {
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    if(cmd === `${prefix}music'){
         if(!args[0]) {
             message.channel.send("Please provide a link.");
             return;
@@ -25,12 +20,12 @@ module.exports.run = async (bots, message, args) => {
 
         let info = await ytdl.getInfo(args[0]);
         let connection = await message.member.voiceChannel.join();
-        let dispatcher = await connection.playStream(ytdl(args[0], {
-            filter: 'audioonly'
-        }));
+    let dispatcher = await connection.playStream(ytdl(args[0], {
+        filter: 'audioonly'
+    }));
 
-        message.channel.send("Now playing: ${info.title}");
-    }
+    message.channel.send("Now playing: ${info.title}");
+    
 }
 
 module.exports.help = {
