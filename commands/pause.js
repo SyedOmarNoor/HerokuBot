@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const queue = new Map();
-const serverQueue = queue.get(msg.guild.id);
 
 module.exports.run = async (bots, message, args) => {
+    const serverQueue = queue.get(message.guild.id);
     if (serverQueue && serverQueue.playing) {
         serverQueue.playing = false;
         serverQueue.connection.dispatcher.pause();
