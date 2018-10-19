@@ -24,7 +24,7 @@ module.exports.run = async (bots, message, args) => {
         filter: 'audioonly'
     }));
 
-    message.channel.send("Now playing: ${info.title}");
+    message.channel.send('Now playing: ${info.title}');
     
 }
 
