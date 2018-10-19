@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-let spoon = './xw9igs0hjhc11.jpg';
 
 module.exports.run = async (bots, message, args) => {
 
