@@ -4,17 +4,20 @@ module.exports.run = async (bots, message, args) => {
 
     
     let helpEmbed = new Discord.RichEmbed()
+
+    //:information_source: (info I)
+
     
     .setDescription("Help and Command Information")
     .setColor("#ffffff")
     .addField("!!help", "Makes me give a list of commands")
-    .addField("Info", "(Blank space)")
-    .addField("!!botinfo", "Makes me show information about myself")
-    .addField("!!serverinfo", "Makes me show information about the server")
-    .addField("!!rules", "Make me give a list of rules.")
+    .addField(":information_source: Info", "(Blank space)")
+    .addField(":information_source:!!botinfo", "Makes me show information about myself")
+    .addField(":information_source:!!serverinfo", "Makes me show information about the server")
+    .addField(":information_source:!!rules", "Make me give a list of rules.")
     .addField("Moderation", "(Blank space)")
-    .addField("!!report", "Makes me make a report to the 'reports' channel. Usage: !!report @user reason")
-    .addField("!!tempmute", "Makes me mute a user temporarily. Usage: !!tempmute @user (number)s/m/h/d")
+    .addField(":scales:!!report", "Makes me make a report to the 'reports' channel. Usage: !!report @user reason")
+    .addField(":scales:!!tempmute", "Makes me mute a user temporarily. Usage: !!tempmute @user (number)s/m/h/d")
     .addField("Fun", "(Blank space)")
     .addField("!!hello", "Makes me say hello in return")
     .addField("!!goodbye", "Makes me say goodbye in return")
