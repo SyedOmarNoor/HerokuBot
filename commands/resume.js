@@ -4,16 +4,16 @@ const YTDL = require("ytdl-core");
 function resume(connection, message) {
     var server = server[message.guild.id];
     server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-    server.queue.shift();
+    queue.shift();
     server.dispatcher.on("resume", function() {
-        if(server.queue[0]){
+        if(queue[0]){
         play(connection, message);
         }
         else connection.resume();
     })
 }
 module.exports.run = async (bots, message, args) => {
-    var serverQueue = queue.get(queue);
+    var serverQueue = queue;
     if (serverQueue && !serverQueue.playing) {
         serverQueue.playing = true;
         serverQueue.connection.dispatcher.resume();
