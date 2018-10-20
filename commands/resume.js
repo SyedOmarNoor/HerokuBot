@@ -1,17 +1,19 @@
-const queue = new Map();
+const queue = require("./New folder/queuecommon.js");
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
-function play(connection, message) {
-    var server = servers[message.guild.id];
+function resume(connection, message) {
+    var server = server[message.guild.id];
     server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
     server.queue.shift();
-    server.dispatcher.on("end", function() {
-        if(server.queue[0]) play(connection, message);
-        else connection.disconnect();
+    server.dispatcher.on("resume", function() {
+        if(server.queue[0]){
+        play(connection, message);
+        }
+        else connection.resume();
     })
 }
 module.exports.run = async (bots, message, args) => {
-    const serverQueue = queue.get[message.guild.id];
+    var serverQueue = queue.get(queue);
     if (serverQueue && !serverQueue.playing) {
         serverQueue.playing = true;
         serverQueue.connection.dispatcher.resume();
