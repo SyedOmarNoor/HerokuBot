@@ -17,7 +17,7 @@ module.exports.run = async (bots, message, args) => {
     
     .setDescription("Help and Command Information")
     .setColor("#ffffff")
-    .addField("!!help", "Makes me give a list of commands")
+    .addField(":question:!!help", "Makes me give a list of commands")
     //.addField("Info", "(Blank space)")
     .addField(":information_source:!!botinfo", "Makes me show information about myself")
     .addField(":information_source:!!serverinfo", "Makes me show information about the server")
