@@ -33,6 +33,6 @@ module.exports.noPerms = (message, perm) => {
             sql.run(`INSERT INTO ${message.channel.name} (username, message, timestamp, userID) VALUES (?,?,?,?)`, [message.author.username, message.content, tStamp, message.author.id]);
             }) // KNOWN ISSUE: Does not like channels with "-" in them
         })
-    }
+    //}
 
 }
