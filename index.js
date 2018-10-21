@@ -43,7 +43,7 @@ let args = messageArray.slice(1);
 
 var servers = {};
 
-if(cmd === `v!${args}`) return;
+if(cmd === `v!`) return;
 
 let commandfile = bot.commands.get(cmd.slice(prefix.length));
 if(commandfile) commandfile.run(bot, message, args);
