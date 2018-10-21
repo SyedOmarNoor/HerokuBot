@@ -51,7 +51,8 @@ module.exports.run = async (bots, message, args) => {
     //     }
     // }
     // if(args[0]) {
-        return message.channel.send(helpEmbed);
+        return message.author.send(helpEmbed);
+        return message.channel.send("The commands have been sent to you via DM.");
     // }
 
 }
