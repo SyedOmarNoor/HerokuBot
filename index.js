@@ -41,7 +41,7 @@ let messageArray = message.content.split(" ");
 let cmd = messageArray[0];
 let args = messageArray.slice(1);
 
-if(cmd !== `${prefix}args`) return;
+if(!cmd === `${prefix}args`) return;
 
 let commandfile = bot.commands.get(cmd.slice(prefix.length));
 if(commandfile) commandfile.run(bot, message, args);
