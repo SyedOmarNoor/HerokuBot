@@ -29,7 +29,7 @@ fs.readdir("./commands", (err, files) => {
 bot.on("ready", async () => {
 console.log(`${bot.user.username} should be online. Can you go see if it is?`);
 //console.log(`Server : ${message.guild.name} | Channel : #${message.channel.name} | Userid : ${message.author.tag} | Message : ${message.content}\n`);
-bot.user.setActivity("(is that music?)", {type: "LISTENING"});
+bot.user.setActivity("people say !!help", {type: "WATCHING"});
 });
 
 bot.on("message", async message => {
@@ -41,7 +41,10 @@ let messageArray = message.content.split(" ");
 let cmd = messageArray[0];
 let args = messageArray.slice(1);
 
-if(cmd !== `${prefix}args`) return;
+var servers = {};
+
+//if(cmd !== `!!${args}`) return; (don't use)
+if(!message.content.startsWith(prefix)) return;
 
 let commandfile = bot.commands.get(cmd.slice(prefix.length));
 if(commandfile) commandfile.run(bot, message, args);
