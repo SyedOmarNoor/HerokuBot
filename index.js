@@ -43,7 +43,8 @@ let args = messageArray.slice(1);
 
 var servers = {};
 
-if(cmd !== `!!${args}`) return;
+//if(cmd !== `!!${args}`) return;
+if(!message.content.startsWith(prefix)) return;
 
 let commandfile = bot.commands.get(cmd.slice(prefix.length));
 if(commandfile) commandfile.run(bot, message, args);
