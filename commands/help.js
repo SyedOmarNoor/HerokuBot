@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bots, message, args) => {
 
-    message.channel.send("The commands have been sent to you via DM.");
+
     
     let helpEmbed = new Discord.RichEmbed()
 
@@ -52,6 +52,7 @@ module.exports.run = async (bots, message, args) => {
     //     }
     // }
     // if(args[0]) {
+        message.channel.send("The commands have been sent to you via DM.")
         return message.author.send(helpEmbed);
     // }
 
