@@ -22,11 +22,11 @@ module.exports.noPerms = (message, perm) => {
     //         })
     // })
     // }else{ //otherwise it's a normal channel
-        var db = new sqlite3.Database('chatlog.db');
+        var db = new sqlite3.Database('./chatlog.db');
 
-        var data = db.export();
-        var buffer = new buffer(data);
-        fs.writeFileSync("chatlog.db", buffer);
+        // var data = db.export();
+        // var buffer = new buffer(data);
+        // fs.writeFileSync("chatlog.db", buffer);
 
         db.run(`INSERT INTO ${message.channel.name} (username, message, timestamp, userID) VALUES (?,?,?,?)`, [message.author.username, message.content, tStamp, message.author.id]).catch(() =>{
             console.error;
