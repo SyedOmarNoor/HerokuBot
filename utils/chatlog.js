@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const moment = require('moment');
 const sql = require('sqlite');
+const sqlite3 = require('sqlite3')
 
 module.exports.noPerms = (message, perm) => {
 
@@ -21,11 +22,11 @@ module.exports.noPerms = (message, perm) => {
     //         })
     // })
     // }else{ //otherwise it's a normal channel
-        var db = new sql.Database();
+        var db = new sqlite3.Database('chatlog.db');
 
-        var data = db.export();
-        var buffer = new Buffer(data);
-        fs.writeFileSync("chatlog.sqlite", buffer);
+        // var data = db.export();
+        // var buffer = new buffer(data);
+        // fs.writeFileSync("chatlog.db", buffer);
 
         db.run(`INSERT INTO ${message.channel.name} (username, message, timestamp, userID) VALUES (?,?,?,?)`, [message.author.username, message.content, tStamp, message.author.id]).catch(() =>{
             console.error;

@@ -1,1 +1,6 @@
-var queue = new Map();
+module.exports = {
+
+    queue: function (){
+        const queue = new Map();
+    }
+}

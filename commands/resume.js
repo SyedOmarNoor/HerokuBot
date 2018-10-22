@@ -1,4 +1,4 @@
-const queue = require("./New folder/queuecommon.js");
+var queue = require('./New folder/queuecommon.js');
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 function resume(connection, message) {
