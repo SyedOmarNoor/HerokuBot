@@ -2,13 +2,13 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bots, message, args) => {    
 
-    let bicon = bot.user.displayAvatarURL;
+    let bicon = bots.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setDescription("Bot information")
     .setColor("#ffffff")
     .setThumbnail(bicon)
-    .addField("Bot name:", bot.user.username)
-    .addField("Created on:", bot.user.createdAt);
+    .addField("Bot name:", bots.user.username)
+    .addField("Created on:", bots.user.createdAt);
 
     return message.channel.send(botembed);
 
