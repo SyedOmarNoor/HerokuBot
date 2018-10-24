@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const ytdl = require("ytdl-core");
 //const process.env.FFMPEG_PATH = './node_modules/ffmpeg-binaries/bin/ffmpeg.exe'
-var ffmpegPath = './node_modules/ffmpeg-binaries/bin/ffmpeg.exe'
+var ffmpegPath = './node_modules/ffmpeg-binaries/bin/ffmpeg.exe';
 
 module.exports.run = async (bots, message, args) => {
         if(!args[0]) {

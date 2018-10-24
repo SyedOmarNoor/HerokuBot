@@ -1,6 +1,7 @@
 //!!stop
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
+var ffmpegPath = './node_modules/ffmpeg-binaries/bin/ffmpeg.exe';
 function play(connection, message) {
     var server = servers[message.guild.id];
     server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
