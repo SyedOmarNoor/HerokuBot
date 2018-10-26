@@ -121,6 +121,8 @@ if(commandfile) commandfile.run(bot, message, args);
 //     return message.channel.send("It doesn't work that way.");
 // }
 
+//yay
+
 });
 
 bot.login(tokenfile.token);
