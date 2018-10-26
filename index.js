@@ -7,7 +7,7 @@ const queue = new Map();
 
 bot.commands = new Discord.Collection();
 
-fs.readdir('./commands', (err, files) => {
+fs.readdir("./commands", (err, files) => {
 
     if(err) console.log(err);
 
@@ -40,8 +40,7 @@ if (message.channel.type === "dm") return;
 let prefix = botconfig.prefix;
 let messageArray = message.content.split(" ");
 let cmd = messageArray[0];
-let args = message.content.slice(prefix.length).trim().split(/ +/g);
-let command = args.shift().toLowerCase();
+let args = messageArray.slice(1);
 
 var servers = {};
 
@@ -49,7 +48,7 @@ var servers = {};
 if(!message.content.startsWith(prefix)) return;
 
 let commandfile = bot.commands.get(cmd.slice(prefix.length));
-if(commandfile) commandfile.run(bot, message, command);
+if(commandfile) commandfile.run(bot, message, args);
 
 
 // if(cmd === `${prefix}report`){
