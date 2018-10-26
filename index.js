@@ -38,9 +38,11 @@ if(message.author.bot) return;
 if (message.channel.type === "dm") return;
 
 let prefix = botconfig.prefix;
-let messageArray = message.content.split(" ");
-let cmd = messageArray[0];
-let args = messageArray.slice(1);
+let messageArray = message.content.split(/ +/g);
+let cmd = args.shift().toLowerCase();
+let args = message.content.slice(prefix.length).trim().split(/ +/g);
+//const args = message.content.slice(prefix.length).trim().split(/ +/g);
+//const command = args.shift().toLowerCase();
 
 var servers = {};
 
