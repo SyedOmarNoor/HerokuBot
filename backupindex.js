@@ -30,7 +30,7 @@ fs.readdir("./commands", (err, files) => {
 bot.on("ready", async () => {
 console.log(`${bot.user.username} should be online. Can you go see if it is?`);
 //console.log(`Server : ${message.guild.name} | Channel : #${message.channel.name} | Userid : ${message.author.tag} | Message : ${message.content}\n`);
-bot.user.setActivity("people not say !!help", {type: "WATCHING"});
+bot.user.setActivity(`people not say ${botconfig.prefix}help on ${bot.guilds.size} servers`, {type: "WATCHING"});
 });
 
 bot.on("message", async message => {
@@ -38,9 +38,11 @@ if(message.author.bot) return;
 if (message.channel.type === "dm") return;
 
 let prefix = botconfig.prefix;
-let messageArray = message.content.split(" ");
-let cmd = messageArray[0];
-let args = messageArray.slice(1);
+let messageArray = message.content.split(/ +/g);
+let cmd = args.shift().toLowerCase();
+let args = message.content.slice(prefix.length).trim().split(/ +/g);
+//const args = message.content.slice(prefix.length).trim().split(/ +/g);
+//const command = args.shift().toLowerCase();
 
 var servers = {};
 
