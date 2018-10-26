@@ -40,7 +40,8 @@ if (message.channel.type === "dm") return;
 let prefix = botconfig.prefix;
 let messageArray = message.content.split(" ");
 let cmd = messageArray[0];
-let args = messageArray.slice(1);
+let args = message.content.slice(prefix.length).trim().split(/ +/g);
+let command = args.shift().toLowerCase();
 
 var servers = {};
 
@@ -48,7 +49,7 @@ var servers = {};
 if(!message.content.startsWith(prefix)) return;
 
 let commandfile = bot.commands.get(cmd.slice(prefix.length));
-if(commandfile) commandfile.run(bot, message, args);
+if(commandfile) commandfile.run(bot, message, command);
 
 
 // if(cmd === `${prefix}report`){
