@@ -1,4 +1,3 @@
-var queue = require('./New folder/queuecommon.js');
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 var ffmpegPath = './node_modules/ffmpeg-binaries/bin/ffmpeg.exe';
@@ -14,7 +13,7 @@ function resume(connection, message) {
     })
 }
 module.exports.run = async (bots, message, args) => {
-    var serverQueue = queue;
+    var serverQueue = queue.get(message.guild.id);;
     if (serverQueue && !serverQueue.playing) {
         serverQueue.playing = true;
         serverQueue.connection.dispatcher.resume();
