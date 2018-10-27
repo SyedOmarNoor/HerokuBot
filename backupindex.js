@@ -3,7 +3,7 @@ const tokenfile = require("./token.json");
 const Discord = require("discord.js");
 const fs = require("fs")
 const bot = new Discord.Client({disableEveryone: true});
-const queue = new Map();
+// const queue = new Map();
 
 bot.commands = new Discord.Collection();
 
@@ -39,8 +39,8 @@ if (message.channel.type === "dm") return;
 
 let prefix = botconfig.prefix;
 let messageArray = message.content.split(/ +/g);
-let cmd = args.shift().toLowerCase();
 let args = message.content.slice(prefix.length).trim().split(/ +/g);
+let cmd = args.shift().toLowerCase();
 //const args = message.content.slice(prefix.length).trim().split(/ +/g);
 //const command = args.shift().toLowerCase();
 

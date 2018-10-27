@@ -3,7 +3,7 @@ const token = process.env.token;
 const Discord = require("discord.js");
 const fs = require("fs")
 const bot = new Discord.Client({disableEveryone: true});
-const queue = new Map();
+// const queue = new Map();
 
 bot.commands = new Discord.Collection();
 
