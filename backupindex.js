@@ -41,7 +41,7 @@ let messageArray = message.content.split(/ +/g);
 // let args = message.content.slice(prefix.length).trim().split(/ +/g);
 // let cmd = args.shift().toLowerCase();
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
+const cmd = args.shift().toLowerCase();
 
 var servers = {};
 
