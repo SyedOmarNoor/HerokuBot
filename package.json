@@ -18,6 +18,7 @@
     "eslint": "^5.7.0",
     "ffmpeg": "0.0.4",
     "ffmpeg-binaries": "^4.0.0",
+    "fs": "0.0.1-security",
     "jshint": "^2.9.6",
     "jslint": "^0.12.0",
     "moment": "^2.22.2",
