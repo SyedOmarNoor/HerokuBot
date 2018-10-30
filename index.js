@@ -18,7 +18,7 @@ fs.readdir("./commands", (err, files) => {
 
     jsfile.forEach((f, i) =>{
         let props = require(`./commands/${f}`);
-        console.log(`${f} is present and loaded!`)
+        console.log(`${f} is present and loaded!`);
         bot.commands.set(props.help.name, props);
     });
 
@@ -120,6 +120,15 @@ if(commandfile) commandfile.run(bot, message, args);
 //     return message.channel.send("It doesn't work that way.");
 // }
 
+//yay
+
 });
+
+// exports.conf = {
+//     aliases: ['Stuff', 'AlsoStuff']
+//     };
+//     exports.help = {
+//     name: "More Stuff", description: "SillyStuff.", usage: ".SeriousStuff"
+//     }
 
 bot.login(token);
