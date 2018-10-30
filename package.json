@@ -10,12 +10,16 @@
   "author": "Syed Omar Noor",
   "license": "ISC",
   "dependencies": {
+    "all": "0.0.0",
+    "commando": "0.0.2",
     "discord.js": "^11.4.2",
     "discord.js-lavalink-musicbot": "0.0.6",
-    "discord.js-musicbot-addon": "^12.0.6",
+    "discord.js-musicbot-addon": "^13.0.1",
     "eslint": "^5.7.0",
     "ffmpeg": "0.0.4",
     "ffmpeg-binaries": "^4.0.0",
+    "jshint": "^2.9.6",
+    "jslint": "^0.12.0",
     "moment": "^2.22.2",
     "ms": "^2.1.1",
     "nodemon": "^1.18.4",
@@ -26,6 +30,8 @@
     "sqlite": "^3.0.0",
     "sqlite3": "^4.0.2",
     "superagent": "^4.0.0-beta.5",
+    "yarn": "^1.10.1",
+    "yayify": "^1.0.0",
     "ytdl-core": "^0.26.1"
   }
 }
