@@ -40,8 +40,8 @@ let prefix = botconfig.prefix;
 let messageArray = message.content.split(/ +/g);
 // let args = message.content.slice(prefix.length).trim().split(/ +/g);
 // let cmd = args.shift().toLowerCase();
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
-const cmd = args.shift().toLowerCase();
+let cmd = messageArray[0];
+let args = messageArray.slice(1);
 
 var servers = {};
 
