@@ -9,7 +9,7 @@ module.exports.run = async (bots, message, args) => {
     }
     //if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No.");
     let botmessage = args.join(" ");
-    message.delete().catch();
+    message.delete().catch(O_o=>{});
     message.channel.send(botmessage);
     
 }

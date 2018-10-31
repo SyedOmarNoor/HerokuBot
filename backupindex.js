@@ -42,7 +42,7 @@ let messageArray = message.content.split(/ +/g);
 // let cmd = args.shift().toLowerCase();
 let cmd = messageArray[0];
 let args = messageArray.slice(1);
-console.log(args);
+//console.log(args);
 
 var servers = {};
 
