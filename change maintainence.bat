@@ -4,3 +4,4 @@ heroku maintenance:on
 ) else if "%STATE%"=="off" (
 heroku maintenance:off
 )
+timeout 5 >nul
