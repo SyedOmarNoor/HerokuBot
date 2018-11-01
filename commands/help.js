@@ -6,14 +6,26 @@ module.exports.run = async (bots, message, args) => {
     if(helpmessage){
         switch (helpmessage) {
                     case "say" :
-                        message.channel.send('Pong!');
+                        message.channel.send('!!say (content to say). Makes me say something of your commanding.');
                         break;
                     case "yay" :
-                        message.channel.send('!!yay. !!say but yay.');
+                        message.channel.send('!!yay (content to yay). !!say, but yay.');
                         break;
-                        // case "(command)" :
-
-                        // break; 
+                    case "help" :
+                        message.channel.send("!!help or !!help (command). A call for help.")
+                        break; 
+                    case "hello" :
+                        message.channel.send("!!hello. Hello!")
+                        break; 
+                    case "goodbye" :
+                        message.channel.send("!!goodbye. Goodbye!")
+                        break; 
+                    case "beemovie" :
+                        message.channel.send("!!beemovie. The first three lines of the Bee Movie script.")
+                        break; 
+                    case "spoon" :
+                        message.channel.send("contents")
+                        break; 
                 }
     }else{
     
@@ -51,7 +63,7 @@ module.exports.run = async (bots, message, args) => {
     // .addField(":musical_score:!!resume", "(more WIP, don't use) Makes me resume the music.")
     // .addField(":musical_score:!!queue", "(more WIP, don't use) Makes me show the queue of music.");
 
-    .addField("Commands", "help, botinfo, serverinfo, rules, report, tempmute, hello, goodbye, say, yay, beemovie, spoon")
+    .addField("Commands (prefix is !!)", "help, botinfo, serverinfo, rules, report, tempmute, hello, goodbye, say, yay, beemovie, spoon")
 
     // let args = message.content.slice(prefix.length).trim().split(/ +/g);
     // let command = args.shift().toLowerCase();
@@ -69,6 +81,7 @@ module.exports.run = async (bots, message, args) => {
     // if(args[0]) {
         //message.channel.send("The commands have been sent to you via DM.")
         //return message.author.send(helpEmbed);
+        // @ts-ignore
         message.channel.send(helpEmbed);
     // }
     }

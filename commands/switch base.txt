@@ -1,0 +1,3 @@
+case "(command)" :
+    message.channel.send("contents")
+    break; 
