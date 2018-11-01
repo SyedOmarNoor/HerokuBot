@@ -26,6 +26,21 @@ module.exports.run = async (bots, message, args) => {
                     case "spoon" :
                         message.channel.send("contents")
                         break; 
+                    case "moderation" :
+                        message.channel.send("Commands: tempmute, report")
+                        break; 
+                    case "fun" :
+                        message.channel.send("Commands: hello, goodbye, say, yay, beemovie, spoon")
+                        break; 
+                    case "info" :
+                        message.channel.send("Commands: botinfo, serverinfo, rules")
+                        break; 
+                    case "music" :
+                        message.channel.send("Commands (WIP, sometimes unfunctional): play, stop, pause, resume, queue")
+                        break; 
+                    case "report" :
+                        message.channel.send("!!report @user (reason). For if someone does something.")
+                        break; 
                 }
     }else{
     
@@ -63,7 +78,7 @@ module.exports.run = async (bots, message, args) => {
     // .addField(":musical_score:!!resume", "(more WIP, don't use) Makes me resume the music.")
     // .addField(":musical_score:!!queue", "(more WIP, don't use) Makes me show the queue of music.");
 
-    .addField("Commands (prefix is !!)", "help, botinfo, serverinfo, rules, report, tempmute, hello, goodbye, say, yay, beemovie, spoon")
+    .addField("Commands (prefix is !!)", "For more commands, ask of one of the categories (moderation, info, fun, music).")
 
     // let args = message.content.slice(prefix.length).trim().split(/ +/g);
     // let command = args.shift().toLowerCase();
