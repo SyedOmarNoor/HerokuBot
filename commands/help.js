@@ -30,7 +30,7 @@ module.exports.run = async (bots, message, args) => {
                         message.channel.send("Commands: tempmute, report")
                         break; 
                     case "fun" :
-                        message.channel.send("Commands: hello, goodbye, say, yay, beemovie, spoon")
+                        message.channel.send("Commands: hello, goodbye, say, yay, beemovie, spoon, cat, dog")
                         break; 
                     case "info" :
                         message.channel.send("Commands: botinfo, serverinfo, rules")
@@ -40,6 +40,12 @@ module.exports.run = async (bots, message, args) => {
                         break; 
                     case "report" :
                         message.channel.send("!!report @user (reason). For if someone does something.")
+                        break; 
+                    case "cat" :
+                        message.channel.send("!!cat. The call for displaying a picture of a cat.")
+                        break; 
+                    case "dog" :
+                        message.channel.send("!!dog. The call for displaying a picture of a dog.")
                         break; 
                 }
     }else{
