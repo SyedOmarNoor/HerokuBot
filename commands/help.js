@@ -47,6 +47,24 @@ module.exports.run = async (bots, message, args) => {
                     case "dog" :
                         message.channel.send("!!dog. The call for displaying a picture of a dog.")
                         break; 
+                    case "play" :
+                        message.channel.send("!!play (YouTube link). For connecting to a voice channel and playing a video.")
+                        break; 
+                    case "pause" :
+                        message.channel.send("!!pause. For pausing something already playing.")
+                        break; 
+                    case "stop" :
+                        message.channel.send("!!stop. For stopping something already playing.")
+                        break; 
+                    case "resume" :
+                        message.channel.send("!!resume. For resuming something already playing.")
+                        break; 
+                    case "queue" :
+                        message.channel.send("!!queue. For displaying anything already playing.")
+                        break; 
+                    default:
+                        message.channel.send("Command not found.")
+                        break;
                 }
     }else{
     
