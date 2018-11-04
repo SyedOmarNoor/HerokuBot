@@ -39,7 +39,7 @@ module.exports.run = async (bots, message, args) => {
         //let tempbotmessage = args.shift;
 
         message.delete().catch(O_o=>{});
-        message.channel.send(tempbotmessage).then(msg => msg.delete(mutetime * 1000));
+        message.channel.send(tempbotmessage).then(msg => msg.delete(mutetime*1000));
 
         // setTimeout(function(){
         //     message.delete().catch(O_o=>{});
