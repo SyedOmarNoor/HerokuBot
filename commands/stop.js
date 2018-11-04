@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 var ffmpegPath = './node_modules/ffmpeg-binaries/bin/ffmpeg.exe';
 function play(connection, message) {
-    var server = servers[message.guild.id];
+    var server = server[message.guild.id];
     server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
     server.queue.shift();
     server.dispatcher.on("end", function() {
@@ -13,7 +13,7 @@ function play(connection, message) {
 }
 //var servers = {};
 module.exports.run = (bot, message, args) => {
-    var server = servers[message.guild.id];
+    //var server = servers[message.guild.id];
     if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 }
 
