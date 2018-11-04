@@ -3,7 +3,7 @@ const ms = require("ms");
 
 module.exports.run = async (bots, message, args) => {
 
-    //!!tempsay 1s/m/h/d (content)
+    //!!tempsay 1(in seconds) (content)
 
     
         
@@ -30,18 +30,20 @@ module.exports.run = async (bots, message, args) => {
         //     message.reply("Usage: !!tempmute @user (n)s/m/h/d");
         //     return;
         // }
-        let mutetime = args[0];
+        let mutetime = args.first();
         if(!mutetime) return message.reply("You didn't specify a time.");
 
-        args.shift;
-        let tempbotmessage = args.join(" ");
+        //let argsyay = args.shift;
+        //let tempbotmessage = args.join(" ");
+        let tempbotmessage = args[]
+        //let tempbotmessage = args.shift;
 
         message.delete().catch(O_o=>{});
-        message.channel.send(tempbotmessage)
+        message.channel.send(tempbotmessage).then(msg => msg.delete(5000));
 
-        setTimeout(function(){
-            message.delete().catch(O_o=>{});
-        }, ms(mutetime));
+        // setTimeout(function(){
+        //     message.delete().catch(O_o=>{});
+        // }, ms(mutetime));
 
 
     
@@ -49,5 +51,5 @@ module.exports.run = async (bots, message, args) => {
 }
 
 module.exports.help = {
-    name: "tempmute"
+    name: "tempsay"
 }
