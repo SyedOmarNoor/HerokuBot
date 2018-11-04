@@ -30,7 +30,7 @@ module.exports.run = async (bots, message, args) => {
         //     message.reply("Usage: !!tempmute @user (n)s/m/h/d");
         //     return;
         // }
-        let mutetime = args.first();
+        let mutetime = args[0];
         if(!mutetime) return message.reply("You didn't specify a time.");
 
         //let argsyay = args.shift;
@@ -39,7 +39,7 @@ module.exports.run = async (bots, message, args) => {
         //let tempbotmessage = args.shift;
 
         message.delete().catch(O_o=>{});
-        message.channel.send(tempbotmessage).then(msg => msg.delete(5000));
+        message.channel.send(tempbotmessage).then(msg => msg.delete(mutetime * 1000));
 
         // setTimeout(function(){
         //     message.delete().catch(O_o=>{});
