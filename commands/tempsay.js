@@ -35,7 +35,7 @@ module.exports.run = async (bots, message, args) => {
 
         //let argsyay = args.shift;
         //let tempbotmessage = args.join(" ");
-        let tempbotmessage = args[]
+        let tempbotmessage = args[1]
         //let tempbotmessage = args.shift;
 
         message.delete().catch(O_o=>{});
