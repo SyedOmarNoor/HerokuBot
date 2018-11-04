@@ -33,9 +33,9 @@ module.exports.run = async (bots, message, args) => {
         let mutetime = args[0];
         if(!mutetime) return message.reply("You didn't specify a time.");
 
-        //let argsyay = args.shift;
-        //let tempbotmessage = args.join(" ");
-        let tempbotmessage = args[1]
+        let argsyay = args.shift;
+        let tempbotmessage = argsyay.join(" ");
+        //let tempbotmessage = args[1]
         //let tempbotmessage = args.shift;
 
         message.delete().catch(O_o=>{});
