@@ -62,6 +62,9 @@ module.exports.run = async (bots, message, args) => {
                     case "queue" :
                         message.channel.send("!!queue. For displaying anything already playing.")
                         break; 
+                    case "nibba" :
+                        message.channel.send("Ni:b::b:a pls")
+                        break; 
                     default:
                         message.channel.send("Command not found.")
                         break;
