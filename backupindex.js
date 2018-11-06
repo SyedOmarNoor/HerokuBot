@@ -3,7 +3,6 @@ const tokenfile = require("./token.json");
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client();
-this.music = require("discord.js-musicbot-addon");
 bot.commands = new Discord.Collection();
 // const queue = new Map();
 
