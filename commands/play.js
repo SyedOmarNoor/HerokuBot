@@ -1,34 +1,63 @@
-const Discord = require("discord.js");
-const ytdl = require("ytdl-core");
-//const process.env.FFMPEG_PATH = './node_modules/ffmpeg-binaries/bin/ffmpeg.exe'
-var ffmpegPath = './node_modules/ffmpeg-binaries/bin/ffmpeg.exe';
+const { Command } = require('discord.js-commando');
 
-module.exports.run = async (bots, message, args) => {
-        if(!args[0]) {
-            message.channel.send("Please provide a link.");
-            return;
+/**
+ * Command responsible for playing whatever is saved in memory for given guild
+ * @type {module.PlayCommand}
+ */
+module.exports = class PlayCommand extends Command {
+    constructor(client) {
+        super(client, {
+            name: 'play',
+            aliases: ['listen', 'stream'],
+            group: 'music',
+            memberName: 'play',
+            description: 'Plays loaded queue',
+            examples: ['play'],
+            guildOnly: true,
+            clientPermissions: ['CONNECT', 'SPEAK'],
+        });
+
+        try {
+            this._initListeners();
+        } catch (e) {
+            console.log('Failed to initialize PlayCommand listeners', e);
         }
+    }
 
-        if(!message.member.voiceChannel) {
-            message.channel.send("Please join a voice channel.");
-            return;
+    /**
+     *
+     * @param msg
+     * @returns {Promise.<Message|Message[]>}
+     */
+    run(msg) {
+        try {
+            this.client.music.play(msg.guild);
+        } catch (e) {
+            console.log(e);
+            return msg.say('Something went horribly wrong! Please try again later.')
         }
-        //if (message.guild.me.voiceChannel) return message.channel.send('Sorry, the bot is already connected to a music channel.');
+    }
 
-        let validate = await ytdl.validateURL(args[0]);
-        if (!validate) return message.channel.send("Sorry, please input a valid url following the command.");
+    _initListeners()
+    {
+        this.client.music.on('playing', async (track, guild) => {
+            if (guild.voiceConnection) {
+                let playingMessage = this.client.music.messages.get(guild.id);
+                if (playingMessage && playingMessage.deletable) playingMessage.delete();
+                let channel = guild.channels.find('type', 'text');
+                if (channel) this.client.music.savePlayerMessage(guild, (await channel.send('', {embed: this.client.music.getInfo(guild)})));
+                else console.log(`No text channel found for guild ${guild.id}/${guild.name} to display music playing embed.`)
+            }
+        });
 
-        let info = await ytdl.getInfo(args[0]);
-        let connection = await message.member.voiceChannel.join();
-        let dispatcher = await connection.playStream(ytdl(args[0], {
-            filter: 'audioonly'
-    }));
+        this.client.music.on('play', (text, guild) => {
+            if (guild.voiceConnection) {
+                let channel = guild.channels.find('type', 'text');
+                if (channel) channel.send(text);
+                else console.log(`No text channel found for guild ${guild.id}/${guild.name} to display music playing embed.`)
+            }
+        });
 
-    message.channel.send(`${info.title} is now playing`);
-    
-}
-
-module.exports.help = {
-    name: "play",
-    aliases: ["start"]
-}
+        this.client.music.on('error', text => { throw text; });
+    }
+};

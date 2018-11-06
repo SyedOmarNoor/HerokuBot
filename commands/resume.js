@@ -1,26 +1,33 @@
-const Discord = require("discord.js");
-const YTDL = require("ytdl-core");
-var ffmpegPath = './node_modules/ffmpeg-binaries/bin/ffmpeg.exe';
-function resume(connection, message) {
-    var server = server[message.guild.id];
-    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-    queue.shift();
-    server.dispatcher.on("resume", function() {
-        if(queue[0]){
-        play(connection, message);
-        }
-        else connection.resume();
-    })
-}
-module.exports.run = async (bots, message, args) => {
-    var serverQueue = queue.get(message.guild.id);;
-    if (serverQueue && !serverQueue.playing) {
-        serverQueue.playing = true;
-        serverQueue.connection.dispatcher.resume();
-        return message.channel.send('▶ Resumed the music for you!');
-    }
-}
+const { Command } = require('discord.js-commando');
 
-module.exports.help = {
-    name: "resume"
-}
+module.exports = class ResumeCommand extends Command {
+    constructor(client) {
+        super(client, {
+            name: 'resume',
+            aliases: [],
+            group: 'music',
+            memberName: 'resume',
+            description: 'Resumes music player if it has been paused',
+            examples: ['resume'],
+            guildOnly: true,
+        });
+        this.client.music.on('resume', async (text, guild) => {
+            let channel = guild.channels.find('type', 'text');
+            if (channel) (await channel.send(text)).delete(12000);
+            else console.log(`No text channel found for guild ${guild.id}/${guild.name} to send resume text output`)
+        });
+    }
+
+    /**
+     * @param msg
+     * @returns {Promise.<Message|Message[]>}
+     */
+    run(msg) {
+        try {
+            this.client.music.resume(msg.guild)
+        } catch (e) {
+            console.log(e);
+            return msg.say('Something went horribly wrong! Please try again later.');
+        }
+    }
+};
