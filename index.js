@@ -29,7 +29,7 @@ fs.readdir("./commands", (err, files) => {
 bot.on("ready", async () => {
 console.log(`${bot.user.username} should be online. Can you go see if it is?`);
 //console.log(`Server : ${message.guild.name} | Channel : #${message.channel.name} | Userid : ${message.author.tag} | Message : ${message.content}\n`);
-bot.user.setActivity(`people not say ${botconfig.prefix}help on ${bot.guilds.size} servers`, {type: "WATCHING"});
+bot.user.setActivity(`over ${bot.guilds.size} servers`, {type: "WATCHING"});
 });
 
 bot.on("message", async message => {
