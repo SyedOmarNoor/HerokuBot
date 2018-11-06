@@ -1,5 +1,5 @@
 const { Command } = require('discord.js-commando');
-const Youtube = require('discord-helpers/integrations/youtube');
+const Youtube = require('./discord-helpers/integrations/youtube.js');
 
 /**
  * Command responsible for filtering out the songs saved in memory from one location to the other.
