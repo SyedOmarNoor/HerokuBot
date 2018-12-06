@@ -46,7 +46,14 @@ fs.readdir("./commands", (err, files) => {
 bot.on("ready", async () => {
 console.log(`${bot.user.username} should be online. Can you go see if it is?`);
 //console.log(`Server : ${message.guild.name} | Channel : #${message.channel.name} | Userid : ${message.author.tag} | Message : ${message.content}\n`);
-bot.user.setActivity(`over ${bot.guilds.size} servers`, {type: "WATCHING"});
+if(bot.guilds.size == 1){
+    bot.user.setActivity(`over only 1 server`, {type: "WATCHING"});
+} else if(bot.guilds.size > 1) {
+    bot.user.setActivity(`over ${bot.guilds.size} servers`, {type: "WATCHING"});
+} else {
+    bot.user.setActivity(`endlessly in the darkness`, {type: "WATCHING"});
+}
+
 console.log(bot.guilds);
 });
 
