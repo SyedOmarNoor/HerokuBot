@@ -24,7 +24,7 @@ module.exports.run = async (bots, message, args) => {
                         message.channel.send("!!beemovie. The first three lines of the Bee Movie script.")
                         break; 
                     case "spoon" :
-                        message.channel.send("contents")
+                        message.channel.send("!!spoon. A picture of the Splatoon 2 logo with 'lat' removed and the 2 shaped into a spoon.")
                         break; 
                     case "moderation" :
                         message.channel.send("Commands: tempmute, report")
@@ -35,9 +35,6 @@ module.exports.run = async (bots, message, args) => {
                     case "info" :
                         message.channel.send("Commands: botinfo, serverinfo, rules")
                         break; 
-                    case "music" :
-                        message.channel.send("Commands (WIP, sometimes unfunctional): play, stop, pause, resume, queue")
-                        break; 
                     case "report" :
                         message.channel.send("!!report @user (reason). For if someone does something.")
                         break; 
@@ -46,24 +43,12 @@ module.exports.run = async (bots, message, args) => {
                         break; 
                     case "dog" :
                         message.channel.send("!!dog. The call for displaying a picture of a dog.")
-                        break; 
-                    case "play" :
-                        message.channel.send("!!play (YouTube link). For connecting to a voice channel and playing a video.")
-                        break; 
-                    case "pause" :
-                        message.channel.send("!!pause. For pausing something already playing.")
-                        break; 
-                    case "stop" :
-                        message.channel.send("!!stop. For stopping something already playing.")
-                        break; 
-                    case "resume" :
-                        message.channel.send("!!resume. For resuming something already playing.")
-                        break; 
-                    case "queue" :
-                        message.channel.send("!!queue. For displaying anything already playing.")
-                        break; 
+                        break;
                     case "nibba" :
                         message.channel.send("Ni:b::b:a pls")
+                        break; 
+                    case "tempmute" :
+                        message.channel.send("!!tempmute @user ((number)s/m/h/d/w/y). Temporarily mute a person.")
                         break; 
                     default:
                         message.channel.send("Command not found.")
@@ -105,7 +90,7 @@ module.exports.run = async (bots, message, args) => {
     // .addField(":musical_score:!!resume", "(more WIP, don't use) Makes me resume the music.")
     // .addField(":musical_score:!!queue", "(more WIP, don't use) Makes me show the queue of music.");
 
-    .addField("Commands (prefix is !!)", "For more commands, ask of one of the categories (moderation, info, fun, music).")
+    .addField("Commands (prefix is !!)", "For more commands, ask of one of the categories (moderation, info, fun).")
 
     // let args = message.content.slice(prefix.length).trim().split(/ +/g);
     // let command = args.shift().toLowerCase();
