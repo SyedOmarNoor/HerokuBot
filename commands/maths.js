@@ -4,6 +4,8 @@ module.exports.run = async (bots, message, args) => {
     // let mathsyay = args.split();
 
     // let solution = eval(mathsyay);
+
+    
     function getSubstringIndex(str, substring, n) {
         var times = 0, index = null;
         while (times < n && index !== -1) {
