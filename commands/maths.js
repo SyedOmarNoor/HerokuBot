@@ -9,9 +9,9 @@ module.exports.run = async (bots, message, args) => {
     try {
         resp = math.eval(args);
     } catch (e) {
-        return message.channel.send("Input a valid equation")
+        return message.channel.send("Input a valid equation");
     }
-    
+    message.channel.send(resp);
 }
 
 module.exports.help = {
