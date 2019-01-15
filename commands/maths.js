@@ -7,9 +7,9 @@ module.exports.run = async (bots, message, args) => {
     // let solution = eval(mathsyay);
     
     let resp;
-    let yayay = args.replace(/x/g, "*"); 
+    //let yayay = args.replace(/x/g, "*"); 
     try {
-        resp = math.eval(yayay);
+        resp = math.eval(args);
     } catch (e) {
         return message.channel.send("Input a valid equation");
     };
