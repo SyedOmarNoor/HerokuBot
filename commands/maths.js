@@ -11,7 +11,7 @@ module.exports.run = async (bots, message, args) => {
     try {
         resp = math.eval(args);
     } catch (e) {
-        return message.channel.send("Input a valid equation");
+        return message.channel.send("Input a valid equation, or try using '*' for times and '/' for divide");
     };
     
     //resp.allReplace({'x': '*', 'b': 'o'})
