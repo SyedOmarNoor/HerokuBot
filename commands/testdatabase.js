@@ -19,8 +19,17 @@ module.exports.run = async (bots, message, args) => {
         _id: mongoose.Types.ObjectId(),
         username: rUser.user.username,
         userID: rUser.id,
-        reason: 
-    })
+        reason: reason,
+        rUsername: message.author.username,
+        rUserID: message.author.id,
+        time: message.createdAt
+    });
+
+    report.save()
+    .then(result => console.log(result))
+    .catch(err => console.log(err));
+
+    message.reply("Report saved.")
 }
 
 module.exports.help = {
